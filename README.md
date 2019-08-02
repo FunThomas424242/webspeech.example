@@ -6,6 +6,7 @@ Beispiel für eine Webseite mit Unterstützung von Spracheingabe
 
 ## Quellen
 * https://w3c.github.io/speech-api/ (neues API)
+* https://www.google.com/intl/en/chrome/demos/speech.html (Demo neues API)
 * https://mdn.github.io/web-speech-api/speech-color-changer/ (Demo neues API)
 * https://shapeshed.com/html5-speech-recognition-api/  (altes API)
 * https://github.com/Daniel-Hug/speech-input (altes API)
