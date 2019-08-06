@@ -2,13 +2,23 @@ var SpeechRecognition = SpeechRecognition || webkitSpeechRecognition
 var SpeechGrammarList = SpeechGrammarList || webkitSpeechGrammarList
 var SpeechRecognitionEvent = SpeechRecognitionEvent || webkitSpeechRecognitionEvent
 
-function erkenneSprachEingabe(){
+function erkenneSprachEingabe( words){
 
     // Spracherkennung konfigurieren
     var recognition = new SpeechRecognition();
     recognition.lang = 'de-DE';
     recognition.interimResults = false;
     recognition.maxAlternatives = 1;
+
+    // Grammatik initialisieren
+    if( words){
+
+        var speechRecognitionList = new SpeechGrammarList();
+        var grammar = '#JSGF V1.0; grammar words; public <word> = ' + words.join(' | ') + ' ;'
+        speechRecognitionList.addFromString(grammar, 1);
+        recognition.grammars = speechRecognitionList;
+    }
+
 
     // Spracherkennung starten
     recognition.start();
