@@ -37,6 +37,7 @@ function erkenneSprachEingabe( words){
         var speechResult = event.results[0][0].transcript; //.toLowerCase();
         document.querySelector('#suchfeld').value = speechResult;
         console.log('Confidence: ' + event.results[0][0].confidence);
+        suchkriterienVorlesen();
     }
 
     recognition.onspeechend = function() {
